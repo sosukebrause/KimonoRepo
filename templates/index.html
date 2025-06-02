@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentic Kimono Store</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">着物 Kimono</div>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <div class="hero-content">
+          <h1>Discover Authentic Japanese Kimonos</h1>
+          <p>Handcrafted with tradition, designed for elegance</p>
+          <a href="#collection" class="cta-button">View Collection</a>
+        </div>
+      </section>
+
+      <section id="featured">
+        <h2>Featured Kimonos</h2>
+        <div class="kimono-grid">
+          <div class="kimono-card">
+            <img
+              src="{{ url_for('static', filename='images/kimono1.jpg') }}"
+              alt="Traditional Silk Kimono"
+            />
+            <h3>Traditional Silk Kimono</h3>
+            <p>Hand-painted silk with cherry blossom design</p>
+            <span class="price">$1,200</span>
+          </div>
+          <div class="kimono-card">
+            <img
+              src="{{ url_for('static', filename='images/kimono2.jpg') }}"
+              alt="Summer Yukata"
+            />
+            <h3>Summer Yukata</h3>
+            <p>Light cotton with wave patterns</p>
+            <span class="price">$450</span>
+          </div>
+          <div class="kimono-card">
+            <img
+              src="{{ url_for('static', filename='images/kimono3.jpg') }}"
+              alt="Wedding Kimono"
+            />
+            <h3>Wedding Kimono</h3>
+            <p>Luxurious embroidered ceremonial kimono</p>
+            <span class="price">$2,800</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>Our Heritage</h2>
+        <div class="about-content">
+          <p>
+            We source authentic kimonos directly from master craftsmen in Japan,
+            ensuring the highest quality and authenticity in every piece. Each
+            kimono tells a unique story through its intricate patterns and
+            traditional techniques.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p>Email: info@kimonostore.com</p>
+          <p>Phone: +1 (555) 123-4567</p>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Pinterest</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Authentic Kimono Store. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
