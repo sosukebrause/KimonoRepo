@@ -1,2 +1,9 @@
-Flask==3.0.2
-Werkzeug==3.0.1 
+Flask==2.2.5
+Werkzeug==2.2.3
+python-dotenv==0.21.1
+flask-mail==0.9.1
+
+# SECRET_KEY=your-secret-key-here
+# MAIL_USERNAME=umigashima@gmail.com
+# MAIL_PASSWORD=cxfe uefk ldnd kmnu
+# MAIL_DEFAULT_SENDER=your-email@gmail.com 
