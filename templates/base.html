@@ -4,46 +4,111 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kimono Site - {% block title %}{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Override Tailwind's preflight styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* Disable Tailwind's base styles for our custom components */
+      #hero,
+      #featured,
+      #about,
+      .kimono-card,
+      .footer-content {
+        all: revert;
+      }
+    </style>
   </head>
   <body class="bg-white">
-    <nav class="bg-white shadow-lg">
-      <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center h-16">
-          <a href="{{ url_for('home') }}" class="text-xl font-bold"
-            >Kimono Site</a
-          >
-          <div class="flex space-x-4">
-            <a
-              href="{{ url_for('home') }}"
-              class="text-gray-700 hover:text-gray-900"
-              >Home</a
-            >
-            <a
-              href="{{ url_for('contact') }}"
-              class="text-gray-700 hover:text-gray-900"
-              >Contact</a
-            >
+    <header>
+      <nav>
+        <div class="logo">着物 Kimono</div>
+        <div class="nav-right">
+          <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          </ul>
+          <div class="country-selector">
+            <button id="countryButton" class="country-btn">
+              <span id="selectedCountry">🇺🇸 USD</span>
+              <span class="arrow">▼</span>
+            </button>
+            <div id="countryDropdown" class="country-dropdown">
+              <a href="#" data-country="us" data-currency="USD" data-symbol="🇺🇸"
+                >🇺🇸 United States (USD)</a
+              >
+              <a href="#" data-country="jp" data-currency="JPY" data-symbol="🇯🇵"
+                >🇯🇵 Japan (JPY)</a
+              >
+              <a href="#" data-country="gb" data-currency="GBP" data-symbol="🇬🇧"
+                >🇬🇧 United Kingdom (GBP)</a
+              >
+              <a href="#" data-country="eu" data-currency="EUR" data-symbol="🇪🇺"
+                >🇪🇺 European Union (EUR)</a
+              >
+              <a href="#" data-country="ca" data-currency="CAD" data-symbol="🇨🇦"
+                >🇨🇦 Canada (CAD)</a
+              >
+              <a href="#" data-country="au" data-currency="AUD" data-symbol="🇦🇺"
+                >🇦🇺 Australia (AUD)</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p>Email: info@kimonostore.com</p>
+          <p>Phone: +1 (555) 123-4567</p>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Pinterest</a>
           </div>
         </div>
       </div>
-    </nav>
-
-    <main class="min-h-screen">{% block content %}{% endblock %}</main>
-
-    <footer class="bg-gray-800 text-white py-8">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-4 md:mb-0">
-            <p>&copy; 2024 Kimono Site. All rights reserved.</p>
-          </div>
-          <div class="flex space-x-4">
-            <a href="{{ url_for('contact') }}" class="hover:text-gray-300"
-              >Contact</a
-            >
-          </div>
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Kimono Site. All rights reserved.</p>
       </div>
     </footer>
+
+    <script>
+      // Toggle dropdown functionality only
+      document.addEventListener("DOMContentLoaded", function () {
+        const countryButton = document.getElementById("countryButton");
+        const countryDropdown = document.getElementById("countryDropdown");
+
+        // Toggle dropdown
+        countryButton.addEventListener("click", function (e) {
+          e.stopPropagation();
+          countryDropdown.classList.toggle("show");
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function () {
+          countryDropdown.classList.remove("show");
+        });
+      });
+    </script>
+    <script src="{{ url_for('static', filename='js/currency.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   </body>
 </html>

@@ -1,156 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Authentic Kimono Store</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="logo">着物 Kimono</div>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#collection">Collection</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<main>
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Discover Authentic Japanese Kimonos</h1>
+      <p>Handcrafted with tradition, designed for elegance</p>
+      <a href="#collection" class="cta-button">View Collection</a>
+    </div>
+  </section>
 
-    <main>
-      <section id="hero">
-        <div class="hero-content">
-          <h1>Discover Authentic Japanese Kimonos</h1>
-          <p>Handcrafted with tradition, designed for elegance</p>
-          <a href="#collection" class="cta-button">View Collection</a>
-        </div>
-      </section>
-
-      <section id="featured">
-        <h2>Featured Styles</h2>
-        <div class="kimono-grid">
-          <div class="kimono-card">
-            <img
-              src="{{ url_for('static', filename='images/kimono1.jpg') }}"
-              alt="Traditional Silk Kimono"
-            />
-            <h3>Traditional Silk Kimono</h3>
-            <p>Hand-painted silk with cherry blossom design</p>
-            <span class="price">$1,200</span>
-          </div>
-          <div class="kimono-card">
-            <img
-              src="{{ url_for('static', filename='images/kimono2.jpg') }}"
-              alt="Summer Yukata"
-            />
-            <h3>Summer Yukata</h3>
-            <p>
-              A yukata is a type of Japanese kimono, but more casual than the
-              more famous silk version. Made of lightweight, breathable
-              materials–typically cotton–yukata are perfect for summer. A yukata
-              is easy to put on and can be worn on bare skin. Thickness may vary
-              to suit each season
-            </p>
-            <span class="price">$450</span>
-          </div>
-          <div class="kimono-card">
-            <img
-              src="{{ url_for('static', filename='images/jinbei1.jpg') }}"
-              alt="Wedding Kimono"
-            />
-            <h3>Men's Jinbei</h3>
-            <p>
-              A "jinbei" (甚平) is a traditional Japanese summer garment, often
-              worn as loungewear or pajamas. It consists of a loose-fitting,
-              kimono-style top and matching shorts or pants. Jinbei are
-              typically made from light, breathable fabrics like linen or
-              cotton, and are usually aerated around the shoulders making them
-              comfortable for warm weather.
-            </p>
-            <span class="price">$100</span>
-          </div>
-          <div class="kimono-card">
-            <img
-              src="{{ url_for('static', filename='images/happi.jpg') }}"
-              alt="Traditional Silk Kimono"
-            />
-            <h3>Traditional Happi</h3>
-            <p>
-              A "Happi" coat (法被) is a traditional Japanese jacket, often worn
-              at festivals or as a uniform by tradespeople or firefighters. It's
-              typically made of cotton and features a loose, often long
-              (kneelength or longer), design. Happi coats can be recognized by
-              their bold patterns, vibrant colors, and the presence of a back
-              crest or collar crest indicating the wearer's affiliation or brand
-            </p>
-            <span class="price">$1,200</span>
-          </div>
-          <div class="kimono-card">
-            <img
-              src="{{ url_for('static', filename='images/haori.jpg') }}"
-              alt="Summer Yukata"
-            />
-            <h3>Haori</h3>
-            <p>
-              A haori (羽織) is a traditional Japanese jacket-garment worn over
-              a kimono. It's a type of outer garment, resembling a shortened
-              kimono with no overlapping front panels. Haoris can be formal or
-              casual, and they often feature a thinner collar and large sleeve
-              pockets
-            </p>
-            <span class="price">$450</span>
-          </div>
-          <div class="kimono-card">
-            <img
-              src="{{ url_for('static', filename='images/kimono3.jpg') }}"
-              alt="Wedding Kimono"
-            />
-            <h3>Wedding Kimono</h3>
-            <p>Luxurious embroidered ceremonial kimono</p>
-            <span class="price">$2,800</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="about">
-        <h2>Our Heritage</h2>
-        <div class="about-content">
-          <p>
-            We source authentic kimonos directly from master craftsmen in Japan,
-            ensuring the highest quality and authenticity in every piece. Each
-            kimono tells a unique story through its intricate patterns and
-            traditional techniques.
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Contact Us</h4>
-          <p>Email: info@kimonostore.com</p>
-          <p>Phone: +1 (555) 123-4567</p>
-        </div>
-        <div class="footer-section">
-          <h4>Follow Us</h4>
-          <div class="social-links">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">Pinterest</a>
-          </div>
-        </div>
+  <section id="featured">
+    <h2>Featured Styles</h2>
+    <div class="kimono-grid">
+      <div class="kimono-card">
+        <img
+          src="{{ url_for('static', filename='images/kimono1.jpg') }}"
+          alt="Traditional Silk Kimono"
+        />
+        <h3>Traditional Silk Kimono</h3>
+        <p>Hand-painted silk with cherry blossom design</p>
+        <span class="price">$1,200</span>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Authentic Kimono Store. All rights reserved.</p>
+      <div class="kimono-card">
+        <img
+          src="{{ url_for('static', filename='images/kimono2.jpg') }}"
+          alt="Summer Yukata"
+        />
+        <h3>Summer Yukata</h3>
+        <p>
+          A yukata is a type of Japanese kimono, but more casual than the more
+          famous silk version. Made of lightweight, breathable
+          materials–typically cotton–yukata are perfect for summer. A yukata is
+          easy to put on and can be worn on bare skin. Thickness may vary to
+          suit each season
+        </p>
+        <span class="price">$10</span>
       </div>
-    </footer>
+      <div class="kimono-card">
+        <img
+          src="{{ url_for('static', filename='images/jinbei1.jpg') }}"
+          alt="Wedding Kimono"
+        />
+        <h3>Men's Jinbei</h3>
+        <p>
+          A "jinbei" (甚平) is a traditional Japanese summer garment, often worn
+          as loungewear or pajamas. It consists of a loose-fitting, kimono-style
+          top and matching shorts or pants. Jinbei are typically made from
+          light, breathable fabrics like linen or cotton, and are usually
+          aerated around the shoulders making them comfortable for warm weather.
+        </p>
+        <span class="price">$100</span>
+      </div>
+      <div class="kimono-card">
+        <img
+          src="{{ url_for('static', filename='images/happi.jpg') }}"
+          alt="Traditional Silk Kimono"
+        />
+        <h3>Traditional Happi</h3>
+        <p>
+          A "Happi" coat (法被) is a traditional Japanese jacket, often worn at
+          festivals or as a uniform by tradespeople or firefighters. It's
+          typically made of cotton and features a loose, often long (kneelength
+          or longer), design. Happi coats can be recognized by their bold
+          patterns, vibrant colors, and the presence of a back crest or collar
+          crest indicating the wearer's affiliation or brand
+        </p>
+        <span class="price">$1,200</span>
+      </div>
+      <div class="kimono-card">
+        <img
+          src="{{ url_for('static', filename='images/haori.jpg') }}"
+          alt="Summer Yukata"
+        />
+        <h3>Haori</h3>
+        <p>
+          A haori (羽織) is a traditional Japanese jacket-garment worn over a
+          kimono. It's a type of outer garment, resembling a shortened kimono
+          with no overlapping front panels. Haoris can be formal or casual, and
+          they often feature a thinner collar and large sleeve pockets
+        </p>
+        <span class="price">$450</span>
+      </div>
+      <div class="kimono-card">
+        <img
+          src="{{ url_for('static', filename='images/kimono3.jpg') }}"
+          alt="Wedding Kimono"
+        />
+        <h3>Wedding Kimono</h3>
+        <p>Luxurious embroidered ceremonial kimono</p>
+        <span class="price">$2,800</span>
+      </div>
+    </div>
+  </section>
 
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-  </body>
-</html>
+  <section id="about">
+    <h2>Our Heritage</h2>
+    <div class="about-content">
+      <p>
+        We source authentic kimonos directly from master craftsmen in Japan,
+        ensuring the highest quality and authenticity in every piece. Each
+        kimono tells a unique story through its intricate patterns and
+        traditional techniques.
+      </p>
+    </div>
+  </section>
+</main>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
