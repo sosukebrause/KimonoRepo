@@ -1,63 +1,93 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
 <main>
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Discover Authentic Japanese Kimonos</h1>
-      <p>Handcrafted with tradition, designed for elegance</p>
-      <a href="#collection" class="cta-button">View Collection</a>
+  <section
+    id="hero"
+    class="h-[70vh] bg-cover bg-center flex items-center justify-center text-white relative"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ url_for('static', filename='images/fabric-cover.jpg') }}')"
+  >
+    <div class="max-w-4xl mx-auto px-4 py-8 text-center">
+      <h1 class="text-5xl font-bold mb-6 mt-6">
+        Discover Authentic Japanese Kimonos
+      </h1>
+      <p class="text-xl mb-6">
+        Handcrafted with tradition, designed for elegance
+      </p>
+      <a
+        href="#collection"
+        class="inline-block px-8 py-4 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-colors"
+        >View Collection</a
+      >
     </div>
   </section>
 
-  <section id="featured">
-    <h2>Featured Styles</h2>
-    <div class="kimono-grid">
-      <div class="kimono-card">
+  <section id="featured" class="py-16 px-4 max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
+      Featured Styles
+    </h2>
+    <div class="grid grid-cols-3 gap-8">
+      <div
+        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl"
+      >
         <img
-          src="{{ url_for('static', filename='images/kimono1.jpg') }}"
+          src="{{ url_for('static', filename='images/kimono4.jpg') }}"
           alt="Traditional Silk Kimono"
+          class="w-full h-64 object-cover"
         />
-        <h3>Traditional Silk Kimono</h3>
-        <p>Hand-painted silk with cherry blossom design</p>
-        <span class="price">$1,200</span>
-      </div>
-      <div class="kimono-card">
-        <img
-          src="{{ url_for('static', filename='images/kimono2.jpg') }}"
-          alt="Summer Yukata"
-        />
-        <h3>Summer Yukata</h3>
-        <p>
-          A yukata is a type of Japanese kimono, but more casual than the more
-          famous silk version. Made of lightweight, breathable
-          materials–typically cotton–yukata are perfect for summer. A yukata is
-          easy to put on and can be worn on bare skin. Thickness may vary to
-          suit each season
+        <h3 class="text-xl font-bold text-gray-800 p-4">
+          Traditional Silk Kimono
+        </h3>
+        <p class="text-gray-600 px-4 pb-4">
+          Formal, hand-painted silk attire for various occasions.
         </p>
-        <span class="price">$10</span>
+        <span class="block px-4 pb-4 text-xl font-bold text-red-600">$120</span>
       </div>
-      <div class="kimono-card">
+      <div
+        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl"
+      >
+        <img
+          src="{{ url_for('static', filename='images/yukata0.jpg') }}"
+          alt="Summer Yukata"
+          class="w-full h-64 object-cover"
+        />
+        <h3 class="text-xl font-bold text-gray-800 p-4">Summer Yukata</h3>
+        <p class="text-gray-600 px-4 pb-4">
+          A type of Japanese kimono, but more casual than the more famous silk
+          version. Yukata are easy to put on. Made of lighweight breathable
+          material (ie cotton) they can be worn on bare skin. They are perfect
+          for everyday wear indoors as well as outdoors. Thickness varies to
+          suit each season.
+        </p>
+        <span class="block px-4 pb-4 text-xl font-bold text-red-600">$10</span>
+      </div>
+      <div
+        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl"
+      >
         <img
           src="{{ url_for('static', filename='images/jinbei1.jpg') }}"
-          alt="Wedding Kimono"
+          alt="Men's Jinbei"
+          class="w-full h-64 object-cover"
         />
-        <h3>Men's Jinbei</h3>
-        <p>
+        <h3 class="text-xl font-bold text-gray-800 p-4">Men's Jinbei</h3>
+        <p class="text-gray-600 px-4 pb-4">
           A "jinbei" (甚平) is a traditional Japanese summer garment, often worn
           as loungewear or pajamas. It consists of a loose-fitting, kimono-style
           top and matching shorts or pants. Jinbei are typically made from
           light, breathable fabrics like linen or cotton, and are usually
           aerated around the shoulders making them comfortable for warm weather.
         </p>
-        <span class="price">$100</span>
+        <span class="block px-4 pb-4 text-xl font-bold text-red-600">$70</span>
       </div>
-      <div class="kimono-card">
+      <div
+        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl"
+      >
         <img
           src="{{ url_for('static', filename='images/happi.jpg') }}"
-          alt="Traditional Silk Kimono"
+          alt="Traditional Happi"
+          class="w-full h-64 object-cover"
         />
-        <h3>Traditional Happi</h3>
-        <p>
+        <h3 class="text-xl font-bold text-gray-800 p-4">Traditional Happi</h3>
+        <p class="text-gray-600 px-4 pb-4">
           A "Happi" coat (法被) is a traditional Japanese jacket, often worn at
           festivals or as a uniform by tradespeople or firefighters. It's
           typically made of cotton and features a loose, often long (kneelength
@@ -65,30 +95,41 @@
           patterns, vibrant colors, and the presence of a back crest or collar
           crest indicating the wearer's affiliation or brand
         </p>
-        <span class="price">$1,200</span>
+        <span class="block px-4 pb-4 text-xl font-bold text-red-600">$40</span>
       </div>
-      <div class="kimono-card">
+      <div
+        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl"
+      >
         <img
           src="{{ url_for('static', filename='images/haori.jpg') }}"
-          alt="Summer Yukata"
+          alt="Haori"
+          class="w-full h-64 object-cover"
         />
-        <h3>Haori</h3>
-        <p>
-          A haori (羽織) is a traditional Japanese jacket-garment worn over a
-          kimono. It's a type of outer garment, resembling a shortened kimono
-          with no overlapping front panels. Haoris can be formal or casual, and
-          they often feature a thinner collar and large sleeve pockets
+        <h3 class="text-xl font-bold text-gray-800 p-4">Haori</h3>
+        <p class="text-gray-600 px-4 pb-4">
+          A haori (羽織) is a traditional Japanese cardigan worn over a kimono.
+          It's a type of outer garment, resembling a shortened kimono with no
+          overlapping front panels, which are tied or clasped together. Haoris
+          can be formal or casual by men and women. They often feature waist or
+          large sleeve pockets and a clasp or tie for the front panels.
         </p>
-        <span class="price">$450</span>
+        <span class="block px-4 pb-4 text-xl font-bold text-red-600">$450</span>
       </div>
-      <div class="kimono-card">
+      <div
+        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl"
+      >
         <img
-          src="{{ url_for('static', filename='images/kimono3.jpg') }}"
+          src="{{ url_for('static', filename='images/uchikake1.jpg') }}"
           alt="Wedding Kimono"
+          class="w-full h-64 object-cover"
         />
-        <h3>Wedding Kimono</h3>
-        <p>Luxurious embroidered ceremonial kimono</p>
-        <span class="price">$2,800</span>
+        <h3 class="text-xl font-bold text-gray-800 p-4">Uchikake Kimono</h3>
+        <p class="text-gray-600 px-4 pb-4">
+          Uchikake (打ち掛け) are luxuriously embroidered and hand painted silk
+          kimono coats worn over a traditional kimono. Used in traditional
+          Japanese weddings and ceremonies.
+        </p>
+        <span class="block px-4 pb-4 text-xl font-bold text-red-600">$800</span>
       </div>
     </div>
   </section>
